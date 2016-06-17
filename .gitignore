@@ -3,3 +3,4 @@ letter.names
 test/
 **/__pycache__/
 resources/
+output/
