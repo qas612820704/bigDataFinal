@@ -1,3 +1,5 @@
 letter.data
 letter.names
-
+test/
+**/__pycache__/
+resources/
