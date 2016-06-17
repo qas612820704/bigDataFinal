@@ -1,5 +1,5 @@
 import sys, os
-from src.normal import resizeImageDir, resizeImageCollectioneDir
+from src.normal import resizeImageDir, resizeImageCollectioneDir, coverImageDirToJSON
 from src.main import main
 # RUN_SHORT_CUT = "resizeImageCollectioneDir"
 
@@ -9,7 +9,8 @@ def print_usage():
     "<cmd>\n",
     "\thelp           : print this message\n",
     "\trun            : run project\n",
-    '\tresizeImageCollectioneDir <input_dir> <output_dir>  : BJ4'
+    '\tresizeImageCollectioneDir <input_dir> : BJ4\n',
+    "\tcoverImageDirToJSON <input_dir>: BJ4\n"
   )))
 
 if __name__ == '__main__':
@@ -22,11 +23,20 @@ if __name__ == '__main__':
 
   if args[0] == "help":
     print_usage()
+
   elif args[0] == "run":
     main()
+
   elif args[0] == "resizeImageCollectioneDir":
     if len(args) < 2:
       print_usage()
       print('Not enough argments')
       sys.exit(-1)
     resizeImageCollectioneDir(args[1], "output/")
+
+  elif args[0] == "coverImageDirToJSON":
+    if len(args) < 2:
+      print_usage()
+      print('Not enough argments')
+      sys.exit(-1)
+    coverImageDirToJSON(args[1], "output/alldata.json")    
