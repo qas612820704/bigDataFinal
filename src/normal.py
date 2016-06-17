@@ -55,3 +55,5 @@ def resizeImageDir(input_dir, output_dir):
     output_path = os.path.join(output_dir, f)
     resizeImageFile(input_path, output_path)
 
+def coverImageToArray(img):
+  pass
