@@ -1,9 +1,9 @@
 .PHONY: make-requirement
 
 make-requirements:
-	pip freeze > requirements.txt
+	pip3 freeze > requirements.txt
 
 install-requirements:
-	pip install -r requirements.txt
+	pip3 install -r requirements.txt
 
 
