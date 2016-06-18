@@ -95,7 +95,7 @@ def coverImageDirToJSON(input_dir, output_file):
 
 def legoJson2Pickle(input_json, out_pickle_file):
   with open(input_json) as data_file:    
-  data = json.load(data_file)
+    data = json.load(data_file)
   alphdata = dict()
   
   for ii in data:
