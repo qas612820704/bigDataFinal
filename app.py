@@ -1,5 +1,5 @@
 import sys, os
-from src.normal import resizeImageDir, resizeImageCollectioneDir, coverImageDirToJSON
+from src.normal import resizeImageDir, resizeImageCollectioneDir, coverImageDirToJSON, legoJson2Pickle
 from src.main import main
 # RUN_SHORT_CUT = "resizeImageCollectioneDir"
 
@@ -10,7 +10,8 @@ def print_usage():
     "\thelp           : print this message\n",
     "\trun            : run project\n",
     '\tresizeImageCollectioneDir <input_dir> : BJ4\n',
-    "\tcoverImageDirToJSON <input_dir>: BJ4\n"
+    "\tcoverImageDirToJSON <input_dir>: BJ4\n",
+    "\tlegoJson2Pickle: BJ4\n"
   )))
 
 if __name__ == '__main__':
@@ -40,3 +41,5 @@ if __name__ == '__main__':
       print('Not enough argments')
       sys.exit(-1)
     coverImageDirToJSON(args[1], "output/alldata.json")    
+  elif args[0] == "legoJson2Pickle":
+    legoJson2Pickle("output/alldata.json", 'output/alphdata.pkl')

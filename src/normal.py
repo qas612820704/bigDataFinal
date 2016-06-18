@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding=utf-8
 from PIL import Image
-import sys, os, re, json
+import sys, os, re, json, pickle
 
 SIZE = (32, 32)
 TRANSINTTOALPHA = (
@@ -92,3 +92,18 @@ def coverImageDirToJSON(input_dir, output_file):
       out_dict[character][number] = coverImageToArray(file_path)
   with open(output_file, 'w') as f:
     f.write(json.dumps(out_dict))
+
+def legoJson2Pickle(input_json, out_pickle_file):
+  with open(input_json) as data_file:    
+  data = json.load(data_file)
+  alphdata = dict()
+  
+  for ii in data:
+    tmpl = []
+    for jj in data[ii]:
+      tmpl.append(data[ii][jj])
+    alphdata[ii] = tmpl
+  
+  outfile = open(out_pickle_file, 'wb')
+  pickle.dump(alphdata, outfile)
+  outfile.close()
