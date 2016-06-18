@@ -93,7 +93,7 @@ def coverImageDirToJSON(input_dir, output_file):
   with open(output_file, 'w') as f:
     f.write(json.dumps(out_dict))
 
-def legoJson2Pickle(input_json, out_pickle_file):
+def legoJson2Pickle(input_json = 'output/alldata.json', out_pickle_file = 'output/alphdatal.pkl'):
   with open(input_json) as data_file:    
     data = json.load(data_file)
   alphdata = dict()
